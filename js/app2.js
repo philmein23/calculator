@@ -11,11 +11,21 @@ $(function() {
             temp += value;
             $("#display").val(temp.substring(0,15));
         }
+        else if (value === "CE") {
+            temp = '';
+
+        }
+        else if (value === "C") {
+            entries = [];
+            temp = '';
+
+        }
         else if (value === "X") {
             entries.push(temp);
             entries.push("*");
             temp = '';
         }
+
         else if (value === "/") {
             entries.push(temp);
             entries.push("/");
@@ -31,7 +41,10 @@ $(function() {
             entries.push("+");
             temp = "";
         }
+        el
         else if (value === "=") {
+
+            entries.push(temp);
 
             var num = Number(entries[0]);
 
@@ -40,16 +53,23 @@ $(function() {
                 var symbol = entries[i];
 
 
-                if (symbol === "*") {num *= otherNum}
-                else if (symbol === "/") {num /= otherNum}
-                else if (symbol === "+") {num += otherNum}
-                else if (symbol === "-") {num -= otherNum}
+                if (symbol === "*") {num *= otherNum;}
+                else if (symbol === "/") {num /= otherNum;}
+                else if (symbol === "+") {num += otherNum;}
+                else if (symbol === "-") {num -= otherNum;}
 
 
-                $("#display").val()
 
 
             }
+
+            $("#display").val(num);
+            entries = [];
+            temp ='';
+
+
+
+
         }
 
 });

@@ -1,23 +1,25 @@
-$(function() {
+$(function () {
 
     var entries = [];
     var total = 0;
     var temp = '';
 
-    $("button").on("click", function() {
+    $("button").on("click", function () {
         var value = $(this).text();
 
         if (!isNaN(value) || value === ".") {
             temp += value;
-            $("#display").val(temp.substring(0,15));
+            $("#display").val(temp.substring(0, 15));
         }
         else if (value === "CE") {
             temp = '';
+            $("#display").val(0);
 
         }
         else if (value === "C") {
             entries = [];
             temp = '';
+            $("#display").val(0);
 
         }
         else if (value === "X") {
@@ -41,7 +43,7 @@ $(function() {
             entries.push("+");
             temp = "";
         }
-        el
+
         else if (value === "=") {
 
             entries.push(temp);
@@ -53,26 +55,30 @@ $(function() {
                 var symbol = entries[i];
 
 
-                if (symbol === "*") {num *= otherNum;}
-                else if (symbol === "/") {num /= otherNum;}
-                else if (symbol === "+") {num += otherNum;}
-                else if (symbol === "-") {num -= otherNum;}
-
-
+                if (symbol === "*") {
+                    num *= otherNum;
+                }
+                else if (symbol === "/") {
+                    num /= otherNum;
+                }
+                else if (symbol === "+") {
+                    num += otherNum;
+                }
+                else if (symbol === "-") {
+                    num -= otherNum;
+                }
 
 
             }
 
             $("#display").val(num);
             entries = [];
-            temp ='';
-
-
+            temp = '';
 
 
         }
 
-});
+    });
 
 
 })

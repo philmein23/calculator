@@ -11,6 +11,13 @@ $(function () {
             temp += value;
             $("#display").val(temp.substring(0, 15));
         }
+        else if (value === "+/-") {
+            var negative = "-";
+            temp = negative.concat(temp);
+            $("#display").val(temp.substring(0, 15));
+
+
+        }
         else if (value === "CE") {
             temp = '';
             $("#display").val(0);
